@@ -1,6 +1,3 @@
-delete from rodovia;
-delete from veiculo;
-
 insert into rodovia (tipo_via, custo_km_rodado) values ('PAVIMENTADA', .54);
 insert into rodovia (tipo_via, custo_km_rodado) values ('NAO_PAVIMENTADA', .62);
 
