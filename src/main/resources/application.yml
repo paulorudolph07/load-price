@@ -1,0 +1,36 @@
+spring:
+  application:
+          name: load-price
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    # excluded-view-names:
+    mode: HTML
+    #prefix: /templates/
+    suffix: .html
+    #template-resolver-order: 2
+    #view-names: .html
+  datasource:
+    url: jdbc:mysql://localhost:3306/loadpricedb
+    username: loadprice
+    password: loadprice123
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    properties:
+      hibernate:
+        dalect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  flyway:
+    baselineOnMigrate: true
+  devtools:
+    remote.secret: thisismysecret
+server:
+  port: 8080
