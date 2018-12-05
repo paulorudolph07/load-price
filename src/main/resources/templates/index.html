@@ -10,19 +10,30 @@
 </head>
 <body>
 	<div layout:fragment="page_content" id="page_content">
-		<h1 class="display-3">Load Price</h1>
+		<h1 class="display-3 text-primary">Load Price</h1>
 		<form>
 			<div class="form-row">
 				<div class="col-md-5 form-group" >
-					<label>Distância (Km) na Rodovia Pavimentada</label> 
-					<input type="number" class="form-control" placeholder="Distância em Km" required="required"
-						data-bind="value: distanciaPavimentada, valueUpdate: 'afterkeydown'">
+					<label class="control-label">Distância na Rodovia Pavimentada</label>
+					<div class="input-group">
+						<input type="number" class="form-control" placeholder="Distância em Km" required="required"
+							data-bind="value: distanciaPavimentada, valueUpdate: 'afterkeydown'">
+						<div class="input-group-append">
+							<span class="input-group-text">Km</span>
+						</div>
+					</div>
 					<span data-bind='visible: distanciaPavimentada.hasError, text: distanciaPavimentada.validationMessage' style="color: red"> </span>
 				</div>
+				
 				<div class="col-md-5 form-group">
-					<label>Distância (Km) na Rodovia Não Pavimentada</label> 
-					<input type="number" class="form-control" placeholder="Distância em Km" required="required"
-						data-bind="value: distanciaNaoPavimentada">
+					<label>Distância na Rodovia Não Pavimentada</label>
+					<div class="input-group">
+						<input type="number" class="form-control" placeholder="Distância em Km" required="required"
+							data-bind="value: distanciaNaoPavimentada, valueUpdate: 'afterkeydown'">
+						<div class="input-group-append">
+							<span class="input-group-text">Km</span>
+						</div>
+					</div>
 					<span data-bind='visible: distanciaNaoPavimentada.hasError, text: distanciaNaoPavimentada.validationMessage' style="color: red"> </span>
 				</div>
 			</div>
@@ -35,20 +46,30 @@
 				                       value: veiculoSelecionado"></select>
 				</div>
 				<div class="col-md-5 form-group">
-					<label>Peso da Carga (Tonelada)</label> 
-					<input type="number" class="form-control" placeholder="Peso em Tonelada" required="required"
-						data-bind="value: pesoTotalCarga">
+					<label>Peso da Carga</label>
+					<div class="input-group">
+						<input type="number" class="form-control" placeholder="Peso em Tonelada" required="required"
+							data-bind="value: pesoTotalCarga, valueUpdate: 'afterkeydown'">
+						<div class="input-group-append">
+							<span class="input-group-text">Tonelada</span>
+						</div>
+					</div>
 					<span data-bind='visible: pesoTotalCarga.hasError, text: pesoTotalCarga.validationMessage' style="color: red"> </span>
 				</div>
 			</div>
 			<div class="form-row">
 				<div class="col-md-5 form-group">
-					<label>Custo do Transporte</label> 
-					<input type="number" class="form-control" disabled="disabled"
-						data-bind="value: custoTransporte">
+					<label>Custo do Transporte</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+						    <span class="input-group-text">R$</span>
+						</div>
+						<input type="number" class="form-control" disabled="disabled"
+							data-bind="value: custoTransporte">
+					</div>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary" data-bind="click: calcularCustoTransporte">
+			<button type="submit" class="btn btn-success" data-bind="click: calcularCustoTransporte">
 				<i class="fa fa-calculator"></i> Calcular</button>
 		</form>
 	</div>

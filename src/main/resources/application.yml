@@ -2,8 +2,8 @@ spring:
   application:
     name: load-price
   datasource:
-    #url: jdbc:mysql://localhost:3306/loadpricedb
-    url: jdbc:mysql://mysql-standalone:3306/loadpricedb
+    url: jdbc:mysql://localhost:3306/loadpricedb
+    #url: jdbc:mysql://mysql-standalone:3306/loadpricedb
     username: loadprice
     password: loadprice123
     driverClassName: com.mysql.jdbc.Driver
