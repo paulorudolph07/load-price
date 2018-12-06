@@ -9,6 +9,7 @@ echo "Building load-price image..."
 docker build . -t load-price
 
 echo "Building load-price container: port 8080"
-docker run -p 8080:8080 --name load-price --link mysql-standalone:mysql -d load-price
+#docker run -p 8080:8080 --name load-price --link mysql-standalone:mysql -d load-price
+docker run -p 8080:8080 --name load-price -d load-price
 
 echo "Finished!"
