@@ -1,18 +1,26 @@
 spring:
   application:
     name: load-price
+  h2:
+    console:
+      enabled: true
+      path: /h2
   datasource:
-    url: jdbc:mysql://localhost:3306/loadpricedb
+    #url: jdbc:mysql://localhost:3306/loadpricedb
     #url: jdbc:mysql://mysql-standalone:3306/loadpricedb
-    username: loadprice
-    password: loadprice123
-    driverClassName: com.mysql.jdbc.Driver
+    #username: loadprice
+    #password: loadprice123
+    #driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:h2:mem:dbh2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
   jpa:
-    database: MYSQL
+    #database: MYSQL
     show-sql: true
-    properties:
-      hibernate:
-        dalect: org.hibernate.dialect.MySQL5InnoDBDialect
+    #properties:
+      #hibernate:
+        #dalect: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: update
   flyway:
